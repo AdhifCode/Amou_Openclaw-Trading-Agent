@@ -1,0 +1,71 @@
+{
+  "agents": {
+    "analyst": {
+      "model": "claude-haiku-4.6",
+      "provider": "anthropic",
+      "temperature": 0.3,
+      "maxTokens": 2000,
+      "reasoning": "Fast analysis, lower cost for frequent operations"
+    },
+    "strategist": {
+      "model": "claude-sonnet-4.6",
+      "provider": "anthropic",
+      "temperature": 0.5,
+      "maxTokens": 3000,
+      "reasoning": "Balanced performance for strategy formulation"
+    },
+    "executor": {
+      "model": "claude-opus-4.8",
+      "provider": "anthropic",
+      "temperature": 0.1,
+      "maxTokens": 1500,
+      "reasoning": "Highest accuracy for critical execution decisions"
+    },
+    "monitor": {
+      "model": "claude-haiku-4.6",
+      "provider": "anthropic",
+      "temperature": 0.2,
+      "maxTokens": 1500,
+      "reasoning": "Fast monitoring, frequent updates"
+    },
+    "developer": {
+      "model": "claude-sonnet-4.6",
+      "provider": "anthropic",
+      "temperature": 0.4,
+      "maxTokens": 4000,
+      "reasoning": "Complex debugging and system analysis"
+    }
+  },
+  "modelCatalog": {
+    "claude-opus-4.8": {
+      "name": "Claude Opus 4.8",
+      "provider": "anthropic",
+      "contextWindow": 200000,
+      "costPer1kTokens": {
+        "input": 0.015,
+        "output": 0.075
+      },
+      "capabilities": ["highest-intelligence", "complex-reasoning"]
+    },
+    "claude-sonnet-4.6": {
+      "name": "Claude Sonnet 4.6",
+      "provider": "anthropic",
+      "contextWindow": 200000,
+      "costPer1kTokens": {
+        "input": 0.003,
+        "output": 0.015
+      },
+      "capabilities": ["balanced", "fast", "cost-effective"]
+    },
+    "claude-haiku-4.6": {
+      "name": "Claude Haiku 4.6",
+      "provider": "anthropic",
+      "contextWindow": 200000,
+      "costPer1kTokens": {
+        "input": 0.0008,
+        "output": 0.004
+      },
+      "capabilities": ["fastest", "lowest-cost", "frequent-use"]
+    }
+  }
+}

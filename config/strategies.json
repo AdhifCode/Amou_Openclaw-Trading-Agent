@@ -1,0 +1,58 @@
+{
+  "strategies": {
+    "BTC/USDT": {
+      "name": "Conservative Momentum",
+      "indicators": ["RSI", "MACD", "SMA_20", "SMA_50"],
+      "timeframe": "4h",
+      "systemPrompt": "btc_conservative",
+      "parameters": {
+        "rsi_oversold": 30,
+        "rsi_overbought": 70,
+        "macd_signal_threshold": 0.5
+      },
+      "riskProfile": "conservative"
+    },
+    "ETH/USDT": {
+      "name": "Volatility Breakout",
+      "indicators": ["BB", "ATR", "Volume", "EMA_12"],
+      "timeframe": "1h",
+      "systemPrompt": "eth_aggressive",
+      "parameters": {
+        "bb_std_dev": 2,
+        "volume_spike_threshold": 1.5
+      },
+      "riskProfile": "aggressive"
+    },
+    "SOL/USDT": {
+      "name": "Trend Following",
+      "indicators": ["EMA_12", "EMA_26", "ADX", "Volume"],
+      "timeframe": "2h",
+      "systemPrompt": "sol_trend",
+      "parameters": {
+        "adx_threshold": 25,
+        "ema_crossover_confirmation": true
+      },
+      "riskProfile": "moderate"
+    }
+  },
+  "systemPrompts": {
+    "btc_conservative": {
+      "role": "Conservative Bitcoin Analyst",
+      "instructions": "You are a conservative Bitcoin analyst. Focus on strong confirmation signals. Only recommend trades with RSI extremes AND MACD confirmation. Avoid choppy markets.",
+      "riskTolerance": "low",
+      "minConfidence": 0.8
+    },
+    "eth_aggressive": {
+      "role": "Aggressive Ethereum Trader",
+      "instructions": "You are an aggressive Ethereum trader. Look for volatility breakouts using Bollinger Bands. High volume spikes are your entry signals. Quick in, quick out.",
+      "riskTolerance": "high",
+      "minConfidence": 0.6
+    },
+    "sol_trend": {
+      "role": "Solana Trend Follower",
+      "instructions": "You are a Solana trend follower. Use EMA crossovers and ADX to identify strong trends. Only trade when ADX > 25. Ride the trend until reversal signals.",
+      "riskTolerance": "medium",
+      "minConfidence": 0.7
+    }
+  }
+}

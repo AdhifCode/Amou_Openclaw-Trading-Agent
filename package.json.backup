@@ -1,0 +1,54 @@
+{
+  "name": "trading-multi-agent",
+  "version": "1.0.0",
+  "description": "Automated Multi-Agent Trading System",
+  "main": "shared/discord-gateway.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node shared/discord-gateway-main.js",
+    "dev": "nodemon shared/discord-gateway-main.js",
+    "start:analyst": "node agents/analyst/index.js",
+    "start:strategist": "node agents/strategist/index.js",
+    "start:executor": "node agents/executor/index.js",
+    "start:monitor": "node agents/monitor/index.js",
+    "start:developer": "node agents/developer/index.js",
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "trading",
+    "discord",
+    "openclaw",
+    "ai-agents"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
+    "axios": "^1.16.1",
+    "ccxt": "^4.5.56",
+    "cors": "^2.8.6",
+    "crypto": "^1.0.1",
+    "decimal.js": "^10.6.0",
+    "discord.js": "^14.26.4",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
+    "joi": "^18.2.1",
+    "openai": "^6.39.1",
+    "redis": "^6.0.0",
+    "socket.io": "^4.8.3",
+    "uuid": "^14.0.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.4.1",
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.3",
+    "supertest": "^7.2.2"
+  }
+}
